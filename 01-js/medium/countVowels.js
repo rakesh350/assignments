@@ -6,7 +6,8 @@
 */
 
 function countVowels(str) {
-    // Your code here
+    const vowelArr = ['a', 'e', 'i', 'o', 'u'];
+    const noOfVowels = [...str].filter(x => vowelArr.includes(x.toLowerCase())).length;
+    return noOfVowels;
 }
-
 module.exports = countVowels;

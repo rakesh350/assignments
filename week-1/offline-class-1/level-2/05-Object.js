@@ -26,5 +26,5 @@ const sampleObject = {
   key2: "value2",
   key3: "value3",
 };
-
+ 
 objectMethods(sampleObject);

@@ -10,3 +10,5 @@ class Animal {
 }
 
 
+let dog = new Animal('Kalu', 4);
+console.log(dog.describe()); // Kalu has 4 legs

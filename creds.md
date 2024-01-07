@@ -1,0 +1,1 @@
+postgresql://mishrar.aws:7iQW3nUJdHZN@ep-small-butterfly-66145635.us-east-2.aws.neon.tech/cohortdb7?sslmode=require

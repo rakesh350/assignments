@@ -12,7 +12,6 @@ let errorCount = 0;
 
 app.get('/user', function(req, res) {
   throw new Error("User not found");
-  res.status(200).json({ name: 'john' });
 });
 
 app.post('/user', function(req, res) {
@@ -25,7 +24,7 @@ app.get('/errorCount', function(req, res) {
 
 app.use((err, req, res, next) => {
   errorCount++;
-  res.status(404).json({msg: err});
+  res.status(404).json({msg: err.message});
 })
 
 module.exports = app;

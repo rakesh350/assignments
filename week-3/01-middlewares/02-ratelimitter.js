@@ -18,14 +18,16 @@ setInterval(() => {
 
 const rateLimiter = (req, res, next) => {
   const userId = req.get('user-id');  
+  console.log(`userId: ${userId}`);
   if (numberOfRequestsForUser.hasOwnProperty(userId)) {
     console.log(numberOfRequestsForUser);
-    if (numberOfRequestsForUser.userId >= 5) {
-      res.status(404).json({ error: "Too many requests" });
+    if (numberOfRequestsForUser[userId] >= 5) {
+      res.status(404).json({ error: "Only 5 requests allowed in 10 sec" });
     }
-    numberOfRequestsForUser.userId += 1;
-  } 
-  numberOfRequestsForUser.userId = 1;  
+    numberOfRequestsForUser[userId] = parseInt(numberOfRequestsForUser[userId]) + 1;
+  } else {
+    numberOfRequestsForUser[userId] = 1;  
+  }  
   next();
 }
 

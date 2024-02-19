@@ -27,13 +27,19 @@ router.post('/signin', async (req, res) => {
     return res.json({ token: jwtToken });
 });
 
-router.post('/courses', adminMiddleware, (req, res) => {
+router.post('/courses', adminMiddleware, async (req, res) => {
     // Implement course creation logic
-    return res.json({ message: 'Hello'})
+    const { title, description, price, imageLink } = req.body;
+    const newCourse = await Course.create({ title, description, price, imageLink });
+    return res.json({ message: 'Course created successfully', courseId : newCourse._id});
 });
 
-router.get('/courses', adminMiddleware, (req, res) => {
+router.get('/courses', adminMiddleware, async (req, res) => {
     // Implement fetching all courses logic
+    const courses = await Course.find({});
+    return res.json({
+        courses: courses
+    });
 });
 
 module.exports = router;

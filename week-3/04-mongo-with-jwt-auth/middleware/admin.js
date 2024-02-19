@@ -25,6 +25,5 @@ async function adminMiddleware(req, res, next) {
     } catch (error) {
         res.json({ message: 'Missing or invalid authentication' })
     }
-    next();
 }
 module.exports = adminMiddleware;

@@ -7,3 +7,4 @@ node_modules/.bin/semver
 node_modules/buffer-equal-constant-time/.npmignore
 node_modules/ecdsa-sig-formatter/CODEOWNERS
 *.md
+week-3/04-mongo-with-jwt-auth/package-lock.json

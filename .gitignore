@@ -6,3 +6,4 @@ node_modules/.bin/semver
 *.yml
 node_modules/buffer-equal-constant-time/.npmignore
 node_modules/ecdsa-sig-formatter/CODEOWNERS
+*.md
